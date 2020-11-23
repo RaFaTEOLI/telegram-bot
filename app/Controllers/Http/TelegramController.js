@@ -1,15 +1,19 @@
-'use strict';
+"use strict";
 
-const Axios = use('axios');
-const Env = use('Env');
+const Axios = use("axios");
+const Env = use("Env");
 
 class TelegramController {
-  send ({ request, response }) {
+  async send({ request, response }) {
     const message = request.body.message;
 
-    Axios.get(`https://api.telegram.org/bot${Env.getOrFail('BOT_KEY')}/sendMessage?chat_id=${Env.getOrFail('CHANNEL_ID')}&text=${message}`).then((result) => {
-      return response.send(view, JSON.parse(result));
-    });
+    await Axios.get(
+      `https://api.telegram.org/bot${Env.getOrFail(
+        "BOT_KEY"
+      )}/sendMessage?chat_id=${Env.getOrFail("CHANNEL_ID")}&text=${message}`
+    );
+
+    return response.json({ response: "Your message was sent!" });
   }
 }
 
