@@ -28,4 +28,4 @@ In order to get the app running you'll have to run `adonis serve --dev`
 ##### Endpoint
 
 The API has only one endpoint, and it's `/sendMessage`, which receives the message, and you must send it as a POST.
-<img src="https://github.com/RaFaTEOLI/telegram-bot/blob/master/endpoint.png?raw=true" width="400">
+<img src="https://raw.githubusercontent.com/RaFaTEOLI/telegram-bot/main/endpoint.png" width="400">
